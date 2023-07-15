@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 mountRoutes(app);
 app.get("/sync", async (req, res) => {
-  await sequelize.sync({ force: true});
+  await sequelize.sync({ Force: true});
   res.send("synced");
 });
 app.all('*', (req, res, next) => {
